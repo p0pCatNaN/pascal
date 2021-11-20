@@ -1,4 +1,4 @@
-﻿begin
+begin
   var f: text;
   var strOfValues: string;
   var bufer: string; // элементы до пробела
@@ -25,8 +25,12 @@
       sum += bufer.toInteger();
       bufer := '';
     end;
-    
-    
-  write(sum/10);
+  close(f);
+  
+  assign(f, 'C:/PascalInput/output.txt');
+  rewrite(f);
+  
+  print(f, sum/10);
+  
   close(f);
 end.
